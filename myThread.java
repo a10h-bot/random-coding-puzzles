@@ -1,4 +1,6 @@
 import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 
 // Ways to create threads  
 //using class Thread and Interface Runnable
@@ -10,6 +12,16 @@ public class myThread {
         Job job = new Job();
         Thread task2 = new Thread(job);
         task2.start();
+        TaskDemo callableTask = new TaskDemo();
+        FutureTask<Integer> future = new FutureTask<>(callableTask);
+        Thread t = new Thread(future);
+        t.start();
+        try {
+            System.out.println(future.get());
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
 
     }
 }
@@ -38,13 +50,14 @@ class Job implements Runnable {
     @Override
     public void run() {
         System.out.println("This is from Thread =>" + Thread.currentThread().getName());
+
     }
 
 }
 
-class TaskDemo implements Callable {
+class TaskDemo implements Callable<Integer> {
     @Override
-    public Integer call() {
+    public Integer call() throws Exception {
         return 10;
     }
 }
