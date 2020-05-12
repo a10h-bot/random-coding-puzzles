@@ -1,5 +1,4 @@
 import java.util.concurrent.Callable;
-import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 // Ways to create threads  
@@ -26,6 +25,7 @@ public class myThread {
     }
 }
 
+// user thread
 class task extends Thread {
     public task(String name) {
         super(name);
@@ -45,6 +45,7 @@ class task extends Thread {
     }
 }
 
+// Runnable task
 class Job implements Runnable {
 
     @Override
@@ -55,6 +56,7 @@ class Job implements Runnable {
 
 }
 
+// callable task
 class TaskDemo implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
