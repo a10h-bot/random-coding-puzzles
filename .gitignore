@@ -1,0 +1,9 @@
+# igoner .class file 
+
+*.class
+
+# Ignor the below thread file
+
+CreatePasAmortThread.java
+
+
