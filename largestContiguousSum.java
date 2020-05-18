@@ -9,7 +9,7 @@
 public class largestContiguousSum {
     public static void main(String[] args) {
         int[] a = { -2, -3, 4, -1, -2, 1, 5, -3 };
-        System.out.println(helper2(a));
+        System.out.println(helper(a));
     }
 
     private static int helper(int[] a) {
